@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1 Intuition — Circuit Intuition</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <a href="/" class="logo">⚡ Circuit Intuition</a>
+            <div class="nav-links">
+                <a href="/articles/">Articles</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <article class="article-content">
+            <div class="container">
+                <div class="article-header">
+                    <span class="tag">Circuit Analysis</span>
+                    <h1>Chapter 1 Intuition: What Sadiku Actually Wants You to Know</h1>
+                    <p class="meta">May 2026 · 15 min read · From <em>Fundamentals of Electric Circuits</em></p>
+                </div>
+
+                <div class="article-body">
+
+                    <p>I spent two weeks on Chapter 1 of Sadiku. Not because it was hard — because I refused to move on until every concept had a <em>physical story</em> behind it.</p>
+                    <p>This article is that story. If you're learning circuits (or re-learning them), read this before you touch a single formula.</p>
+
+                    <hr>
+
+                    <h2>What Is Voltage, Really?</h2>
+                    <p>Sit with the discomfort of this question before reading on. "Potential difference" is not an answer — it's a name we gave to something we don't fully feel.</p>
+                    <p>Here's the image: <strong>imagine voltage as water pressure in a pipe.</strong></p>
+                    <p>Water at the top of a hill has more "potential" to do work than water at the bottom. If you open a valve, it flows down. The <em>difference</em> in height creates pressure. That pressure is voltage.</p>
+                    <div class="callout">
+                        <strong>Voltage = the "push" that makes charge want to move.</strong>
+                        Higher voltage = stronger push.
+                    </div>
+                    <p>The unit is volts (V). One volt means one joule of energy per coulomb of charge. But forget that for now. Think <strong>pressure</strong>.</p>
+
+                    <h2>What Is Current, Then?</h2>
+                    <p>If voltage is pressure, <strong>current is the flow of water itself</strong> — the actual movement of charge through the pipe.</p>
+                    <p>When you connect a battery (a pressure source) across a resistor (a narrow pipe), charge flows. That flow is current.</p>
+                    <div class="callout">
+                        <strong>Current = the rate at which charge moves past a point.</strong>
+                        More current = more charge flowing per second.
+                    </div>
+                    <p>Unit: amperes (A). One ampere = one coulomb per second. Again — don't memorize. Picture the water.</p>
+
+                    <h2>Resistance: The Pipe That Fights Back</h2>
+                    <p>Now put a narrow pipe in the water path. What happens? Less water flows for the same pressure. That's resistance.</p>
+                    <div class="equation-box">
+                        <strong>Ohm's Law:</strong> V = I × R
+                        <br><br>
+                        <em>In water terms:</em> Pressure = Flow × Narrowness
+                        <br><br>
+                        To keep the same flow through a narrower pipe, you need more pressure. Same with electricity.
+                    </div>
+                    <p>Resistance is measured in ohms (Ω). A wire has very low resistance (wide pipe). A tiny surface-mount resistor has higher resistance (narrow pipe). Simple.</p>
+
+                    <h2>Power: What's Actually Being "Used"</h2>
+                    <p>This is where most textbooks lose people. Power in a circuit is the energy being converted per second — the "work" being done.</p>
+                    <p>Think of a water wheel. The water pressure (voltage) pushes water through (current), and the wheel spins. Power = how fast the wheel spins × how hard the water pushes.</p>
+                    <div class="equation-box">
+                        <strong>Power:</strong> P = V × I
+                        <br><br>
+                        Measured in watts (W).
+                    </div>
+                    <p>A resistor takes electrical energy and turns it into heat. That's power dissipation. A motor takes electrical energy and turns it into mechanical motion. Same equation, different result.</p>
+
+                    <h2>The Passive Sign Convention</h2>
+                    <p>This is the most tedious part of Chapter 1, and the one that trips everyone up in exams. Here's the trick:</p>
+                    <ul>
+                        <li><strong>Passive element</strong> (resistor, capacitor, inductor): current enters the positive terminal. Power = +VI (absorbing)</li>
+                        <li><strong>Active element</strong> (battery, source): current leaves the positive terminal. Power = -VI (supplying)</li>
+                    </ul>
+                    <p><em>Just remember:</em> the passive sign convention is nature's way of saying "who's eating and who's cooking." Passive elements eat power. Active elements cook it.</p>
+
+                    <h2>Nodes, Loops, and Branches</h2>
+                    <div class="callout">
+                        <strong>Branch:</strong> A single path with one element (one resistor, one source).<br>
+                        <strong>Node:</strong> Where two or more branches meet.<br>
+                        <strong>Loop:</strong> Any closed path that goes around and comes back.
+                    </div>
+                    <p>Think of a city water system. Pipes are branches. Junctions are nodes. A loop is a complete circuit you can walk around and end up where you started.</p>
+                    <p>This matters because Kirchhoff's laws (Chapter 2-3) are built entirely on these definitions. Get them right now, and KCL/KVL become obvious.</p>
+
+                    <h2>Why This Chapter Matters</h2>
+                    <p>Chapter 1 isn't the "easy" chapter. It's the <strong>foundation</strong> chapter. If you skip the intuition here, every future chapter will feel like memorizing words in a language you don't speak.</p>
+                    <p>But if you nail it — if you <em>feel</em> voltage as pressure, current as flow, resistance as narrowness — then the rest of the book is just variations on the same story.</p>
+                    <p>One pipe. One flow. One pressure. That's all circuits ever are.</p>
+
+                    <hr>
+
+                    <div class="article-footer">
+                        <p><strong>Next up:</strong> Chapter 2 — Basic Laws (Kirchhoff hasn't arrived yet, but his ideas are coming).</p>
+                        <p><em>Learning this live at TU Chemnitz. Writing it down so it sticks — and so it helps someone else on the same path.</em></p>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>Circuit Intuition — TU Chemnitz, Germany</p>
+        </div>
+    </footer>
+</body>
+</html>
