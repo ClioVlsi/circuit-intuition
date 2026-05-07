@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series & Parallel Resistors: The Visual Story — Circuit Intuition</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <a href="/" class="logo">⚡ Circuit Intuition</a>
+            <div class="nav-links">
+                <a href="/articles/">Articles</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <article class="article-content">
+            <div class="container">
+                <div class="article-header">
+                    <span class="tag">Circuit Analysis</span>
+                    <h1>Series & Parallel Resistors: The Visual Story</h1>
+                    <p class="meta">May 2026 · 10 min read</p>
+                </div>
+                <div class="article-body">
+
+                    <p>You've seen the formulas. Resistors in series: R<sub>eq</sub> = R₁ + R₂ + R₃... Resistors in parallel: 1/R<sub>eq</sub> = 1/R₁ + 1/R₂ + 1/R₃...</p>
+                    <p>They look arbitrary. You memorize them for the exam, then forget them two weeks later. <em>That's because you learned the formula before the intuition.</em></p>
+                    <p>Let's fix that.</p>
+
+                    <hr>
+
+                    <h2>The Water Analogy Returns</h2>
+                    <p>Remember: <strong>voltage = pressure</strong> and <strong>current = flow</strong>. A resistor is just a narrow section of pipe that restricts flow.</p>
+                    <p>Now ask yourself: what happens when you put narrow pipes in different arrangements?</p>
+
+                    <hr>
+
+                    <h2>Series: One Pipe After Another</h2>
+                    <p>Imagine water flowing through a pipe with two narrow sections in a row — one after the other.</p>
+                    <p>The water has to squeeze through the first narrow section, <em>then</em> squeeze through the second. Both narrow sections resist the flow. The total resistance is the sum of both narrownesses.</p>
+                    <div class="callout">
+                        <strong>Series = more narrowness = more resistance.</strong>
+                        R<sub>eq</sub> = R₁ + R₂ + R₃ + ...
+                    </div>
+                    <p>Think about it: If you had to walk through two crowded hallways in a row, your total delay is the sum of both delays. The water experiences the same thing — two choke points, stacked up.</p>
+
+                    <h3>Why It Makes Sense</h3>
+                    <ul>
+                        <li><strong>Current</strong> is the same through every resistor (water flows through each pipe section at the same rate — it has to, it's one path)</li>
+                        <li><strong>Voltage</strong> drops are shared across the resistors (pressure drops across each narrow section add up)</li>
+                        <li>Bigger resistor = bigger voltage drop (narrower pipe = more pressure lost)</li>
+                    </ul>
+
+                    <div class="equation-box">
+                        <strong>Series quick facts:</strong><br>
+                        I<sub>total</sub> = I₁ = I₂ = I₃<br>
+                        V<sub>total</sub> = V₁ + V₂ + V₃<br>
+                        R<sub>eq</sub> = R₁ + R₂ + R₃
+                    </div>
+
+                    <hr>
+
+                    <h2>Parallel: Multiple Pipes Side by Side</h2>
+                    <p>Now imagine the pipe splits into two narrower pipes that run side by side, then reunite. The water can choose: go through the left narrow pipe OR the right narrow pipe.</p>
+                    <p>This gives the water <strong>more paths</strong>. More paths = easier to flow = less total resistance. <em>Counterintuitive? Think of it like traffic.</em></p>
+                    <div class="callout">
+                        <strong>Parallel = more paths = less resistance.</strong>
+                        <br>1/R<sub>eq</sub> = 1/R₁ + 1/R₂ + 1/R₃ + ...
+                    </div>
+                    <p>If a highway has 1 lane, traffic moves slow (high resistance). If it has 4 lanes, traffic flows easily (low resistance). Adding parallel resistors is like adding more lanes.</p>
+
+                    <h3>Why the Formula Has Reciprocals</h3>
+                    <p>The reciprocal (1/R) represents <strong>conductance</strong> — how easily current flows. A small resistor = high conductance (wide pipe). A big resistor = low conductance (narrow pipe).</p>
+                    <p>In parallel, conductances <strong>add</strong> (more paths = more total conductance). So 1/R<sub>eq</sub> = 1/R₁ + 1/R₂ + 1/R₃.</p>
+                    <p>R<sub>eq</sub> will always be <strong>smaller</strong> than the smallest resistor. That's the test: if your calculated equivalent resistance is smaller than the smallest value, you did it right.</p>
+
+                    <div class="equation-box">
+                        <strong>Parallel quick facts:</strong><br>
+                        V<sub>total</sub> = V₁ = V₂ = V₃ (same pressure across all paths)<br>
+                        I<sub>total</sub> = I₁ + I₂ + I₃ (flow splits)<br>
+                        1/R<sub>eq</sub> = 1/R₁ + 1/R₂ + 1/R₃
+                    </div>
+
+                    <h3>Special Case: Two Resistors</h3>
+                    <p>When you have exactly two resistors in parallel, the formula simplifies to something you might actually use off the top of your head:</p>
+                    <div class="equation-box">
+                        R<sub>eq</sub> = (R₁ × R₂) / (R₁ + R₂)
+                    </div>
+                    <p>This is the "product over sum" formula. It only works for two resistors. If R₁ = R₂, then R<sub>eq</sub> = R/2 — which makes sense: two equal pipes side by side = half the resistance.</p>
+
+                    <hr>
+
+                    <h2>Series vs Parallel: The Cheat Sheet</h2>
+                    <style>
+                        .compare-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
+                        .compare-table th, .compare-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+                        .compare-table th { background: var(--bg-card); font-weight: 600; }
+                        .compare-table tr:hover { background: rgba(109, 93, 245, 0.05); }
+                        @media (max-width: 640px) {
+                            .compare-table { font-size: 0.85rem; }
+                            .compare-table th, .compare-table td { padding: 8px 10px; }
+                        }
+                    </style>
+                    <table class="compare-table">
+                        <tr>
+                            <th>Property</th>
+                            <th>Series</th>
+                            <th>Parallel</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Water analogy</strong></td>
+                            <td>Narrow sections in a row</td>
+                            <td>Multiple pipes side by side</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Current</strong></td>
+                            <td>Same everywhere</td>
+                            <td>Splits across paths</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Voltage</strong></td>
+                            <td>Split across resistors</td>
+                            <td>Same across all resistors</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R<sub>eq</sub></strong></td>
+                            <td>Larger than biggest R</td>
+                            <td>Smaller than smallest R</td>
+                        </tr>
+                        <tr>
+                            <td><strong>If one fails (opens)</strong></td>
+                            <td>Entire circuit dies</td>
+                            <td>Other paths still work</td>
+                        </tr>
+                    </table>
+
+                    <hr>
+
+                    <h2>Quick Intuition Check</h2>
+                    <p>Look at a circuit and ask: <em>"Can the current take multiple paths?"</em></p>
+                    <ul>
+                        <li><strong>One path only</strong> → series resistors. Add them.</li>
+                        <li><strong>Multiple paths</strong> → parallel resistors. Add reciprocals.</li>
+                    </ul>
+                    <p>That's it. The formulas are just the mathematical way of saying these two things. Once you see the pipe analogy, you never need to blindly memorize again.</p>
+
+                    <hr>
+
+                    <div class="article-footer">
+                        <p><strong>Next up:</strong> Voltage Dividers — why every circuit uses them, and how to design one from intuition.</p>
+                        <p><em>Learning at TU Chemnitz, writing it down so it sticks.</em></p>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>Circuit Intuition — TU Chemnitz, Germany</p>
+        </div>
+    </footer>
+</body>
+</html>
