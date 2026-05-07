@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Voltage Analysis: The Method That Makes Circuits Easy — Circuit Intuition</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <a href="../" class="logo">⚡ Circuit Intuition</a>
+            <div class="nav-links">
+                <a href=".">Articles</a>
+                <a href="../about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <article class="article-content">
+            <div class="container">
+                <div class="article-header">
+                    <span class="tag">Circuit Analysis</span>
+                    <h1>Node Voltage Analysis: The Method That Makes Circuits Easy</h1>
+                    <p class="meta">May 2026 · 12 min read</p>
+                </div>
+                <div class="article-body">
+                    <p>If you have been following this series, you know voltage, current, Ohm’s law, KCL, and KVL. Now it is time to put them all together into a <strong>systematic method</strong> for solving any circuit.</p>
+                    <p>Node Voltage Analysis (also called Nodal Analysis) is that method. Once you learn it, you never go back to guessing.</p>
+
+                    <hr>
+
+                    <h2>The Big Idea</h2>
+                    <div class="callout">
+                        <strong>Node Voltage Analysis = Apply KCL at every node, solve the equations.</strong>
+                    </div>
+                    <p>Pick a reference node (ground), write KCL equations at every other node, solve for voltages, find everything else from Ohm’s law.</p>
+
+                    <hr>
+
+                    <h2>Step-by-Step</h2>
+                    <h3>Step 1: Pick a Reference Node (Ground)</h3>
+                    <p>Choose one node as 0V. Usually the bottom of the circuit or the node with the most connections.</p>
+
+                    <h3>Step 2: Label All Other Nodes</h3>
+                    <p>Give each remaining node a variable name: V₁, V₂, V₃, etc.</p>
+
+                    <h3>Step 3: Write KCL at Each Node</h3>
+                    <p>For each node, sum the currents leaving the node = 0. Express each current using Ohm’s law in terms of the node voltages.</p>
+
+                    <h3>Step 4: Solve the Equations</h3>
+                    <p>N equations with N unknowns. Solve with substitution, elimination, or a calculator.</p>
+
+                    <hr>
+
+                    <h2>Why This Works So Well</h2>
+                    <p>Earlier methods work for simple circuits. But when circuits have 3+ loops or dependent sources, those methods become a mess. Nodal analysis is <strong>systematic</strong>. You always follow the same steps.</p>
+
+                    <hr>
+
+                    <h2>Simple Example</h2>
+                    <p>Circuit with: 10V source from ground to V₁, 1kΩ from V₁ to ground, 2kΩ from V₁ to V₂, 3kΩ from V₂ to ground.</p>
+                    <p>At node V₁: V₁ = 10V (voltage source forces it).</p>
+                    <p>At node V₂: (V₂ − V₁)/2k + V₂/3k = 0</p>
+                    <p>Solving: V₂ = 6V. Simple.</p>
+
+                    <hr>
+
+                    <h2>The Supernode</h2>
+                    <p>When a voltage source connects <strong>between two non-reference nodes</strong>, treat the two nodes as a single <strong>supernode</strong>. Write one KCL equation for the combined region, then add the voltage constraint.</p>
+                    <p>Example: a 5V source connects V₁ to V₂. You know V₁ − V₂ = 5V.</p>
+
+                    <hr>
+
+                    <h2>Common Mistakes</h2>
+                    <ul>
+                        <li>Forgetting to count all nodes (every junction counts)</li>
+                        <li>Wrong sign convention for currents</li>
+                        <li>Not handling voltage sources correctly</li>
+                    </ul>
+
+                    <hr>
+
+                    <div class="article-footer">
+                        <p><strong>Next up:</strong> Mesh Current Analysis — the dual of nodal analysis, using KVL instead of KCL.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>Circuit Intuition — Analog & VLSI Design, Explained Visually</p>
+        </div>
+    </footer>
+</body>
+</html>
