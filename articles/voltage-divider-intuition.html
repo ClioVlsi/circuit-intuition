@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voltage Dividers: Intuition Before Formula — Circuit Intuition</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <a href="../" class="logo">⚡ Circuit Intuition</a>
+            <div class="nav-links">
+                <a href=".">Articles</a>
+                <a href="../about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <article class="article-content">
+            <div class="container">
+                <div class="article-header">
+                    <span class="tag">Circuit Analysis</span>
+                    <h1>Voltage Dividers: Intuition Before Formula</h1>
+                    <p class="meta">May 2026 · 12 min read</p>
+                </div>
+                <div class="article-body">
+
+                    <p>Every electronics engineer has used a voltage divider. It's the simplest circuit that actually <em>does something useful</em> — two resistors, one input voltage, one output voltage that's a fraction of the input.</p>
+                    <p>The formula everyone memorizes: V<sub>out</sub> = V<sub>in</sub> × R₂/(R₁+R₂).</p>
+                    <p>But memorizing this without intuition is dangerous. You'll misapply it. You won't see it when it's hiding inside a bigger circuit. Let's fix that.</p>
+
+                    <hr>
+
+                    <h2>The Water Analogy (One Last Time)</h2>
+                    <p>Imagine a pipe with two narrow sections — R₁ followed by R₂. Water pressure (voltage) enters from the left. After squeezing through R₁, the pressure drops. What's left is the pressure <em>between</em> the two narrow sections — that's your V<sub>out</sub>.</p>
+                    <div class="callout">
+                        <strong>Voltage divider = pressure tap between two restrictions.</strong>
+                        The output is whatever pressure remains after the first restriction.
+                    </div>
+                    <p>If R₁ is very narrow (high resistance), most pressure drops across it, and V<sub>out</sub> is low. If R₁ is wide (low resistance), almost no pressure drops there, so V<sub>out</sub> ≈ V<sub>in</sub>.</p>
+
+                    <hr>
+
+                    <h2>The Formula — Now It Makes Sense</h2>
+                    <div class="equation-box">
+                        V<sub>out</sub> = V<sub>in</sub> × R₂ / (R₁ + R₂)
+                    </div>
+                    <p>Let's break this down by looking at what happens at the extremes:</p>
+
+                    <h3>Case 1: R₂ is huge compared to R₁</h3>
+                    <p>R₂/(R₁+R₂) ≈ 1, so V<sub>out</sub> ≈ V<sub>in</sub>. Makes sense — if the second restriction is extremely narrow (massive resistance), almost all the pressure drop happens <em>after</em> your tap point. You get nearly full pressure.</p>
+
+                    <h3>Case 2: R₁ is huge compared to R₂</h3>
+                    <p>R₂/(R₁+R₂) ≈ 0, so V<sub>out</sub> ≈ 0. The first restriction eats almost all the pressure. Nothing left for the output.</p>
+
+                    <h3>Case 3: R₁ = R₂</h3>
+                    <p>V<sub>out</sub> = V<sub>in</sub> × R/(2R) = V<sub>in</sub>/2. Equal restrictions = equal pressure drops = half the voltage at the tap. This is the classic "half-supply" reference used everywhere.</p>
+
+                    <hr>
+
+                    <h2>The Common Mistake</h2>
+                    <p>The biggest mistake beginners make: <strong>forgetting that the load (whatever you connect to V<sub>out</sub>) becomes part of the divider.</strong></p>
+                    <p>If you connect a 1kΩ load to V<sub>out</sub>, that load is effectively in parallel with R₂. This changes R₂'s effective resistance. Your carefully calculated V<sub>out</sub> shifts.</p>
+                    <div class="callout">
+                        <strong>Rule of thumb:</strong> Make R₂ (bottom resistor) at least 10× smaller than your expected load resistance. Otherwise the load "steals" current and your voltage drops.
+                    </div>
+                    <p>In water terms: if you tap pressure between two pipe sections and then open a valve to drain some water, the pressure at your tap drops. Adding a load = opening a drain.</p>
+
+                    <hr>
+
+                    <h2>Where You Actually See Dividers</h2>
+                    <ul>
+                        <li><strong>Potentiometers (volume knobs):</strong> A variable resistor used as a divider. Turn the knob = change the ratio R₁/(R₁+R₂) = change output voltage.</li>
+                        <li><strong>Sensor circuits:</strong> A photoresistor + fixed resistor = voltage that changes with light.</li>
+                        <li><strong>ADC input scaling:</strong> Your microcontroller reads 0-3.3V, but your sensor outputs 0-10V. A divider scales it down.</li>
+                        <li><strong>Biasing transistors:</strong> Voltage dividers set the base voltage of BJTs (more on this when we get to transistors).</li>
+                    </ul>
+
+                    <hr>
+
+                    <h2>Quick Design Cheat</h2>
+                    <p>Need a specific output voltage? Pick a total current I that your divider will draw, then:</p>
+                    <div class="equation-box">
+                        R₁ + R₂ = V<sub>in</sub> / I<br>
+                        R₂ = V<sub>out</sub> / I<br>
+                        R₁ = (V<sub>in</sub> - V<sub>out</sub>) / I
+                    </div>
+                    <p>The current I is what your divider "wastes." Make it at least 10× the current your load will draw — otherwise the load affects your voltage.</p>
+
+                    <hr>
+
+                    <div class="article-footer">
+                        <p><strong>Next up:</strong> Current Dividers — the mirror image of voltage dividers, and just as intuitive.</p>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>Circuit Intuition — Analog & VLSI Design, Explained Visually</p>
+        </div>
+    </footer>
+</body>
+</html>
