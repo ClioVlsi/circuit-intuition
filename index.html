@@ -7,11 +7,24 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Analog & VLSI circuit design explained with physical intuition — no memorization required. Follow along from Sadiku to Razavi to Gray Meyer.">
+    <meta property="og:title" content="Circuit Intuition — VLSI & Analog Design, Explained Visually">
+    <meta property="og:description" content="No memorization. No magic. Just physical intuition and honest explanations.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#7c3aed">
 </head>
 <body>
     <nav class="nav">
         <div class="container">
-            <a href="." class="logo">⚡ Circuit Intuition</a>
+            <a href="." class="logo">
+                <span class="logo-icon">⚡</span>
+                Circuit Intuition
+            </a>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="nav-links">
                 <a href="articles/">Articles</a>
                 <a href="about.html">About</a>
@@ -21,33 +34,60 @@
 
     <main>
         <section class="hero">
+            <!-- Circuit trace decoration -->
+            <div class="hero-circuit" aria-hidden="true">
+                <svg viewBox="0 0 800 400" preserveAspectRatio="none">
+                    <path d="M0,200 L100,200 L100,100 L200,100 L200,200 L300,200 L300,300 L400,300 L400,200 L500,200 L500,100 L600,100 L600,200 L700,200 L700,150 L800,150" 
+                          stroke="#7c3aed" stroke-width="1.5" fill="none" opacity="0.3"/>
+                    <circle cx="100" cy="200" r="3" fill="#7c3aed" opacity="0.3"/>
+                    <circle cx="200" cy="100" r="3" fill="#7c3aed" opacity="0.3"/>
+                    <circle cx="300" cy="300" r="3" fill="#06b6d4" opacity="0.3"/>
+                    <circle cx="400" cy="200" r="3" fill="#7c3aed" opacity="0.3"/>
+                    <circle cx="500" cy="100" r="3" fill="#06b6d4" opacity="0.3"/>
+                    <circle cx="600" cy="200" r="3" fill="#7c3aed" opacity="0.3"/>
+                    <path d="M400,200 L450,280 L500,200" stroke="#06b6d4" stroke-width="1.5" fill="none" opacity="0.2"/>
+                </svg>
+            </div>
             <div class="container">
-                <h1>Circuits <span class="highlight">Made Intuitive</span></h1>
+                <h1>
+                    <span class="reveal-text">Circuits</span>
+                    <span class="reveal-text">
+                        <span class="highlight">Made Intuitive</span>
+                        <span class="highlight-glow"></span>
+                    </span>
+                </h1>
                 <p class="subtitle">No memorization. No magic. Just physical intuition and honest explanations.</p>
                 <p class="byline">Learning and teaching — one circuit at a time.</p>
-                <a href="articles/" class="btn">Start Reading →</a>
+                <div class="hero-actions">
+                    <a href="articles/" class="btn">
+                        Start Reading
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </section>
 
         <section class="features">
             <div class="container">
                 <div class="feature-grid">
-                    <div class="feature-card">
+                    <div class="feature-card reveal">
                         <span class="icon">🧠</span>
                         <h3>Intuition First</h3>
                         <p>Every formula gets a physical story. If you can't visualize it, I haven't explained it well enough.</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card reveal">
                         <span class="icon">🔬</span>
                         <h3>VLSI Focus</h3>
                         <p>Digital, analog, mixed-signal — from the transistor up. Semiconductor physics with real context.</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card reveal">
                         <span class="icon">📖</span>
                         <h3>Study Journey</h3>
                         <p>Alexander Sadiku → Razavi → Gray Meyer. Follow along as I build foundation for IC design mastery.</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card reveal">
                         <span class="icon">🔧</span>
                         <h3>First Principles</h3>
                         <p>No shortcuts, no black boxes. Every component gets explained from the physics up — the way engineering should be taught.</p>
@@ -58,62 +98,63 @@
 
         <section class="latest-articles">
             <div class="container">
-                <h2>Latest Articles</h2>
+                <div class="article-controls">
+                    <h2>Latest Articles</h2>
+                    <div class="filter-tags">
+                        <span class="filter-tag active" data-filter="all">All</span>
+                        <span class="filter-tag" data-filter="published">Published</span>
+                        <span class="filter-tag" data-filter="Circuit Analysis">Circuit Analysis</span>
+                        <span class="filter-tag" data-filter="Study System">Study System</span>
+                    </div>
+                </div>
                 <div class="article-list">
-                    <article class="article-preview">
+                    <article class="article-preview reveal" data-tags="Circuit Analysis" data-status="published">
                         <span class="tag">Circuit Analysis</span>
-                        <h3>Node Voltage Analysis: Make Circuits Easy</h3>
+                        <h3><a href="articles/node-voltage-analysis.html">Node Voltage Analysis: Make Circuits Easy</a></h3>
                         <p class="meta">May 2026 · 12 min read</p>
                         <p>The first real analysis technique — KCL organized into a systematic method. Master this and you can solve any DC circuit.</p>
-                        <a href="articles/node-voltage-analysis.html" class="btn" style="margin-top:16px;">Read Article →</a>
                     </article>
-                    <article class="article-preview">
+                    <article class="article-preview reveal" data-tags="Circuit Analysis" data-status="published">
                         <span class="tag">Circuit Analysis</span>
-                        <h3>Current Dividers: Mirror of Voltage Dividers</h3>
+                        <h3><a href="articles/current-divider-intuition.html">Current Dividers: Mirror of Voltage Dividers</a></h3>
                         <p class="meta">May 2026 · 10 min read</p>
                         <p>Current dividers split current across parallel paths — and the formula is swapped from voltage dividers. Here's the intuition.</p>
-                        <a href="articles/current-divider-intuition.html" class="btn" style="margin-top:16px;">Read Article →</a>
                     </article>
-                    <article class="article-preview">
+                    <article class="article-preview reveal" data-tags="Circuit Analysis" data-status="published">
                         <span class="tag">Circuit Analysis</span>
-                        <h3>Voltage Dividers: Intuition Before Formula</h3>
+                        <h3><a href="articles/voltage-divider-intuition.html">Voltage Dividers: Intuition Before Formula</a></h3>
                         <p class="meta">May 2026 · 12 min read</p>
                         <p>The simplest circuit that actually does something useful — two resistors, one formula, and the intuition to use it right.</p>
-                        <a href="articles/voltage-divider-intuition.html" class="btn" style="margin-top:16px;">Read Article →</a>
                     </article>
-                    <article class="article-preview">
+                    <article class="article-preview reveal" data-tags="Circuit Analysis" data-status="published">
                         <span class="tag">Circuit Analysis</span>
-                        <h3>Series & Parallel Resistors: The Visual Story</h3>
+                        <h3><a href="articles/series-parallel-visual.html">Series &amp; Parallel Resistors: The Visual Story</a></h3>
                         <p class="meta">May 2026 · 10 min read</p>
                         <p>Why do we add resistors in series but use reciprocals in parallel? The pipe analogy makes it obvious.</p>
-                        <a href="articles/series-parallel-visual.html" class="btn" style="margin-top:16px;">Read Article →</a>
                     </article>
-                    <article class="article-preview">
+                    <article class="article-preview reveal" data-tags="Circuit Analysis" data-status="published">
                         <span class="tag">Circuit Analysis</span>
-                        <h3>Kirchhoff's Laws for Visual Learners</h3>
+                        <h3><a href="articles/kcl-kvl-visual.html">Kirchhoff's Laws for Visual Learners</a></h3>
                         <p class="meta">May 2026 · 10 min read</p>
                         <p>KCL and KVL are not rules to memorize — they're conservation laws that are obvious once you see the water analogy.</p>
-                        <a href="articles/kcl-kvl-visual.html" class="btn" style="margin-top:16px;">Read Article →</a>
                     </article>
-                    <article class="article-preview">
+                    <article class="article-preview reveal" data-tags="Study System" data-status="published">
                         <span class="tag">Study System</span>
-                        <h3>How I Study Circuits: The Visual Method</h3>
+                        <h3><a href="articles/how-i-study-circuits.html">How I Study Circuits: The Visual Method</a></h3>
                         <p class="meta">May 2026 · 12 min read</p>
                         <p>From Sadiku to Razavi to Gray Meyer — the system, the tools, and the mindset that actually works (no memorization required).</p>
-                        <a href="articles/how-i-study-circuits.html" class="btn" style="margin-top:16px;">Read Article →</a>
                     </article>
-                    <article class="article-preview">
+                    <article class="article-preview reveal" data-tags="Circuit Analysis" data-status="published">
                         <span class="tag">Circuit Analysis</span>
-                        <h3>Chapter 1 Intuition: What Sadiku Actually Wants You to Know</h3>
+                        <h3><a href="articles/sadiku-ch1-intuition.html">Chapter 1 Intuition: What Sadiku Actually Wants You to Know</a></h3>
                         <p class="meta">May 2026 · 15 min read</p>
                         <p>The fundamental concepts that make circuit analysis click — voltage, current, power, and passive sign convention explained like you're seeing them for the first time.</p>
-                        <a href="articles/sadiku-ch1-intuition.html" class="btn" style="margin-top:16px;">Read Article →</a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="newsletter">
+        <section class="newsletter reveal">
             <div class="container">
                 <h2>Follow Along</h2>
                 <p>New article every week. No fluff, no fake motivation — just real engineering intuition.</p>
@@ -124,9 +165,11 @@
 
     <footer class="footer">
         <div class="container">
-            <p>Circuit Intuition — Analog & VLSI Design, Explained Visually</p>
-            <p class="small-text">Learning in public. Explaining for keeps.</p>
+            <p>Circuit Intuition — Analog &amp; VLSI Design, Explained Visually</p>
+            <p class="footer-tagline">Learning in public. Explaining for keeps.</p>
         </div>
     </footer>
+
+    <script src="js/app.js"></script>
 </body>
 </html>

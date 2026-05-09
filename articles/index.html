@@ -5,99 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Articles — Circuit Intuition</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="All articles from Circuit Intuition — circuit analysis, semiconductor physics, analog design, and study methods.">
+    <meta name="theme-color" content="#7c3aed">
 </head>
 <body>
     <nav class="nav">
         <div class="container">
-            <a href="../" class="logo">⚡ Circuit Intuition</a>
+            <a href="../" class="logo">
+                <span class="logo-icon">⚡</span>
+                Circuit Intuition
+            </a>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="nav-links">
                 <a href=".">Articles</a>
                 <a href="../about.html">About</a>
             </div>
         </div>
     </nav>
+
     <main>
         <section class="latest-articles" style="padding-top:80px;">
             <div class="container">
-                <h1 style="font-size:2.5rem;font-weight:800;margin-bottom:40px;">All Articles</h1>
+                <div class="article-controls">
+                    <h1 style="font-size:2.5rem;font-weight:800;">All Articles</h1>
+                    <div class="filter-tags">
+                        <span class="filter-tag active" data-filter="all">All</span>
+                        <span class="filter-tag" data-filter="published">Published</span>
+                        <span class="filter-tag" data-filter="coming-soon">Coming Soon</span>
+                        <span class="filter-tag" data-filter="Circuit Analysis">Circuit Analysis</span>
+                        <span class="filter-tag" data-filter="Study System">Study System</span>
+                        <span class="filter-tag" data-filter="Semiconductor Physics">Semiconductor</span>
+                        <span class="filter-tag" data-filter="Analog Design">Analog</span>
+                        <span class="filter-tag" data-filter="Layout">Layout</span>
+                    </div>
+                </div>
                 <div class="article-list">
-                    <article class="article-preview">
-                        <span class="tag">Study System</span>
-                        <h3>How I Study Circuits: The Visual Method</h3>
+                    <!-- PUBLISHED -->
+                    <article class="article-preview reveal" data-tags="Study System" data-status="published">
+                        <span class="tag published">Study System</span>
+                        <h3><a href="how-i-study-circuits.html">How I Study Circuits: The Visual Method</a></h3>
                         <p class="meta">May 2026 · 12 min read</p>
                         <p>From Sadiku to Razavi to Gray Meyer — the system, the tools, and the mindset that actually works (no memorization required).</p>
-                        <a href="how-i-study-circuits.html" class="btn" style="margin-top:16px;">Read Article →</a>
                     </article>
-                    <article class="article-preview">
-                        <span class="tag">Circuit Analysis</span>
-                        <h3>Chapter 1 Intuition: What Sadiku Actually Wants You to Know</h3>
+                    <article class="article-preview reveal" data-tags="Circuit Analysis" data-status="published">
+                        <span class="tag published">Circuit Analysis</span>
+                        <h3><a href="sadiku-ch1-intuition.html">Chapter 1 Intuition: What Sadiku Actually Wants You to Know</a></h3>
                         <p class="meta">May 2026 · 15 min read</p>
                         <p>Voltage, current, power, Ohm's law, and passive sign convention — the foundation of every circuit you'll ever analyze.</p>
-                        <a href="sadiku-ch1-intuition.html" class="btn" style="margin-top:16px;">Read Article →</a>
                     </article>
-                    <article class="article-preview">
-                        <span class="tag">Circuit Analysis</span>
-                        <h3>Node Voltage Analysis: Make Circuits Easy</h3>
+                    <article class="article-preview reveal" data-tags="Circuit Analysis" data-status="published">
+                        <span class="tag published">Circuit Analysis</span>
+                        <h3><a href="node-voltage-analysis.html">Node Voltage Analysis: Make Circuits Easy</a></h3>
                         <p class="meta">May 2026 · 12 min read</p>
                         <p>The first real analysis technique — KCL organized into a systematic method. Master this and you can solve any DC circuit.</p>
-                        <a href="node-voltage-analysis.html" class="btn" style="margin-top:16px;">Read Article →</a>
                     </article>
-                    <article class="article-preview">
-                        <span class="tag">Circuit Analysis</span>
-                        <h3>Current Dividers: Mirror of Voltage Dividers</h3>
+                    <article class="article-preview reveal" data-tags="Circuit Analysis" data-status="published">
+                        <span class="tag published">Circuit Analysis</span>
+                        <h3><a href="current-divider-intuition.html">Current Dividers: Mirror of Voltage Dividers</a></h3>
                         <p class="meta">May 2026 · 10 min read</p>
                         <p>Current dividers are the mirror image of voltage dividers — same formula, but swapped. Once you see why, you'll never confuse them.</p>
-                        <a href="current-divider-intuition.html" class="btn" style="margin-top:16px;">Read Article →</a>
                     </article>
-                    <article class="article-preview">
-                        <span class="tag">Circuit Analysis</span>
-                        <h3>Voltage Dividers: Intuition Before Formula</h3>
+                    <article class="article-preview reveal" data-tags="Circuit Analysis" data-status="published">
+                        <span class="tag published">Circuit Analysis</span>
+                        <h3><a href="voltage-divider-intuition.html">Voltage Dividers: Intuition Before Formula</a></h3>
                         <p class="meta">May 2026 · 12 min read</p>
                         <p>The simplest circuit that actually does something — two resistors, one formula, and the intuition that keeps you from making the classic mistake.</p>
-                        <a href="voltage-divider-intuition.html" class="btn" style="margin-top:16px;">Read Article →</a>
                     </article>
-                    <article class="article-preview">
-                        <span class="tag">Circuit Analysis</span>
-                        <h3>Series & Parallel Resistors: The Visual Story</h3>
+                    <article class="article-preview reveal" data-tags="Circuit Analysis" data-status="published">
+                        <span class="tag published">Circuit Analysis</span>
+                        <h3><a href="series-parallel-visual.html">Series &amp; Parallel Resistors: The Visual Story</a></h3>
                         <p class="meta">May 2026 · 10 min read</p>
                         <p>Why do we add resistors in series but use reciprocals in parallel? The pipe analogy makes it obvious — no memorization needed.</p>
-                        <a href="series-parallel-visual.html" class="btn" style="margin-top:16px;">Read Article →</a>
                     </article>
-                    <article class="article-preview">
-                        <span class="tag">Circuit Analysis</span>
-                        <h3>Kirchhoff's Laws for Visual Learners</h3>
+                    <article class="article-preview reveal" data-tags="Circuit Analysis" data-status="published">
+                        <span class="tag published">Circuit Analysis</span>
+                        <h3><a href="kcl-kvl-visual.html">Kirchhoff's Laws for Visual Learners</a></h3>
                         <p class="meta">May 2026 · 10 min read</p>
                         <p>KCL and KVL are not rules to memorize — they're conservation laws that are obvious once you see them. Here's the physical story.</p>
-                        <a href="kcl-kvl-visual.html" class="btn" style="margin-top:16px;">Read Article →</a>
                     </article>
-                    <article class="article-preview">
-                        <span class="tag">Semiconductor Physics</span>
+
+                    <!-- COMING SOON -->
+                    <article class="article-preview reveal" data-tags="Semiconductor Physics" data-status="coming-soon">
+                        <span class="tag coming-soon">Semiconductor Physics · Coming soon</span>
                         <h3>Band Theory Without the Math (Almost)</h3>
                         <p class="meta">Coming soon</p>
                         <p>Why electrons in crystals form bands, how silicon became the king of semiconductors, and what W(k) actually means.</p>
                     </article>
-                    <article class="article-preview">
-                        <span class="tag">Analog Design</span>
+                    <article class="article-preview reveal" data-tags="Analog Design" data-status="coming-soon">
+                        <span class="tag coming-soon">Analog Design · Coming soon</span>
                         <h3>BJT for Visual Learners</h3>
                         <p class="meta">Coming soon</p>
                         <p>NPN and PNP structures, current flow, the three configurations, and why your amplifier really works the way it does.</p>
                     </article>
-                    <article class="article-preview">
-                        <span class="tag">Layout</span>
+                    <article class="article-preview reveal" data-tags="Layout" data-status="coming-soon">
+                        <span class="tag coming-soon">Layout · Coming soon</span>
                         <h3>Layout of a Motor Driver: My Semester Project</h3>
                         <p class="meta">Coming soon</p>
                         <p>Designing the physical layout of an IC motor driver — from schematic to mask layout, with lessons learned along the way.</p>
                     </article>
                 </div>
-                <p style="text-align:center;margin-top:60px;color:var(--text-muted);">New article every week. Come back for fresh content.</p>
+                <p class="small-text" style="text-align:center;margin-top:60px;">New article every week. Come back for fresh content.</p>
             </div>
         </section>
     </main>
+
     <footer class="footer">
         <div class="container">
-            <p>Circuit Intuition — Analog & VLSI Design, Explained Visually</p>
+            <p>Circuit Intuition — Analog &amp; VLSI Design, Explained Visually</p>
         </div>
     </footer>
+
+    <script src="../js/app.js"></script>
 </body>
 </html>
